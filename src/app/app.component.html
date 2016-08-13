@@ -1,3 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<div class="pipes">
+  {{myDate | date | uppercase}}
+  <input type="text" [(ngModel)]="data" #inp (keyup)="0">
+  {{data | double}}
+  
+  <ul>
+    <li *ngFor="let item of values | filter:inp.value">{{item}}</li>
+  </ul>
+
+  <hr>
+  Async Pipes
+  {{ asyncValue | async }}
+</div>
